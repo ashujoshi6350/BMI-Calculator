@@ -1,0 +1,60 @@
+<html>
+	<body>
+		<div class="bmi-calc">
+			<h1>
+				BMI Calculator
+			</h1>
+			<form name="bmi" id="bmi" onsubmit="calculateBmi()">
+				<div class="field">
+					Enter Height in cms
+				</div>
+				<input required class="" id="height" type="number" name="height">
+				<div class="field">
+					Enter weight in kgs
+				</div>
+				<input required id="weight" type="number" name="weight">
+				<div class="field">
+					Enter Name
+				</div>
+				<input required id="name" type="text" name="name">
+				<div class="field">
+					Enter Email Id
+				</div>
+				<input required id="id" type="Email" name="id">
+				<div class="field">
+					<button type="submit">
+						Submit
+					</button>
+				</div>
+			</form>
+		</div>
+
+		<script type="text/javascript">
+			function calculateBmi(form) {
+				let height = document.getElementById("height").value;
+				let weight = document.getElementById("weight").value;
+				let name = document.getElementById("name").value;
+				let id = document.getElementById("id").value;
+
+				let bmi = 0;
+				bmi = weight/((height/100)*(height/100));
+				alert("Your BMI is:" + bmi);
+			}
+
+		</script>
+	</body>
+	<style>
+		.bmi-calc {
+			text-align: center;
+			position: relative;
+			top: 30%;
+		}
+		.field {
+			margin: 10px 10px 0 10px;
+		}
+
+		input:invalid {
+		  border-color: red;
+		}
+	</style>
+</html>
